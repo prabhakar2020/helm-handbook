@@ -79,4 +79,33 @@ Templates enable parameterization of resource configurations, making charts flex
 Note: Change values.yaml Service->Type from ClusterIP to NodePort for better testing on your local machine. 
 Use your local machine/ VM IP for testing instead of directly using service IP
 ``
+##### Helm upgrade deployment
+``` 
+syntax: helm upgrade <customName> <nameOfChart>
+example: helm upgrade flaskapp flask-rest-api
+```
+##### Helm rollback deployment
+``` 
+syntax: helm rollback <customName> <revisionID>
+example: helm rollback flaskapp 1
+```
+##### Helm Lint
+``` 
+syntax: helm lint <helmChartName>
+example: helm lint flask-rest-api
+```
+
+##### Helm dry-run
+``` 
+syntax: helm install <customName> --debug --dry-run <helmChartName>
+example: helm install flaskapp --debug --dry-run flask-rest-api
+```
+
+##### Helm render templates locally in (deployment, service etc in one output)
+``` 
+syntax: helm template <helmChartName>
+example: helm template flask-rest-api
+```
+
+
 
